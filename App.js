@@ -35,15 +35,45 @@ export default function App() {
   const [isNativeAdShowing, setIsNativeAdShowing] = useState(false);
   const [statusText, setStatusText] = useState('Initializing SDK...');
 
+  const [retryAttempt,setRetryAttempt] = useState(0);
+
   useEffect(() => {
     initAppLovinMax();
+    loadInterstitial();
   }, []);
 
   useEffect(() => {
     console.log(statusText);
   }, [statusText]);
 
-
+  const loadInterstitial = () => {
+    AppLovinMAX.addInterstitialLoadedEventListener(() => {
+      // Interstitial ad is ready to show. AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID) now returns 'true'
+      // Reset retry attempt
+      console.log('Inter loaded...ready to be shown...')
+      setRetryAttempt(0)
+    });
+    AppLovinMAX.addInterstitialLoadFailedEventListener(() => {
+      // Interstitial ad failed to load 
+      // AppLovin recommends that you retry with exponentially higher delays up to a maximum delay (in this case 64 seconds)
+      setRetryAttempt(retryAttempt + 1);
+      const retryDelay = Math.pow(2, Math.min(6, retryAttempt));
+      console.log('Interstitial ad failed to load - retrying in ' + retryDelay + 's');
+      setTimeout(function() {
+        AppLovinMAX.loadInterstitial(INTERSTITIAL_AD_UNIT_ID);
+      }, retryDelay * 1000);
+    });
+    AppLovinMAX.addInterstitialClickedEventListener(() => {});
+    AppLovinMAX.addInterstitialDisplayedEventListener(() => {});
+    AppLovinMAX.addInterstitialAdFailedToDisplayEventListener(() => {
+        // Interstitial ad failed to display. AppLovin recommends that you load the next ad
+        AppLovinMAX.loadInterstitial(INTERSTITIAL_AD_UNIT_ID);
+    });
+    AppLovinMAX.addInterstitialHiddenEventListener(() => {
+      AppLovinMAX.loadInterstitial(INTERSTITIAL_AD_UNIT_ID);
+    });
+    AppLovinMAX.loadInterstitial(INTERSTITIAL_AD_UNIT_ID);
+  }
   const initAppLovinMax = () => {
     if (isInitialized) return;
   
