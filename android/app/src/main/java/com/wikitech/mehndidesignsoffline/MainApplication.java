@@ -1,4 +1,4 @@
-package com.wikitech.offlinemehndidesigns;
+package com.wikitech.mehndidesignsoffline;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

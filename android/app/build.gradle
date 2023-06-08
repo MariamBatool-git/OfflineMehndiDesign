@@ -93,9 +93,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.wikitech.offlinemehndidesigns"
+    namespace "com.wikitech.mehndidesignsoffline"
     defaultConfig {
-        applicationId "com.wikitech.offlinemehndidesigns"
+        applicationId "com.wikitech.mehndidesignsoffline"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface OfflineMehndiDesignsTests : XCTestCase
+@interface MehndiDesignsOfflineTests : XCTestCase
 
 @end
 
-@implementation OfflineMehndiDesignsTests
+@implementation MehndiDesignsOfflineTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {

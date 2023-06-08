@@ -1,4 +1,4 @@
-package com.wikitech.offlinemehndidesigns;
+package com.wikitech.mehndidesignsoffline;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -13,7 +13,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "Offline Mehndi Designs";
+    return "Mehndi Designs Offline";
   }
 
   /**
