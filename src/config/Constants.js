@@ -36,28 +36,28 @@ export const DATA_FLATLIST_HOME = [
 export const SDK_KEY = 'MwC6TPAXga6d3FW9-TwP-wDh-3y8BWyXQ9evTpQEOXtRnNamrUAqONVNQSVczS9OboH9aiNzFEP0c-nSTxGtJn';
 
 export const INTERSTITIAL_AD_UNIT_ID = Platform.select({
-  ios: '7d78299c79536d2c',
-  android: '7d78299c79536d2c',
+  ios: '6b6c97a8e6d2084f',
+  android: '6b6c97a8e6d2084f',
 });
 
 export const REWARDED_AD_UNIT_ID = Platform.select({
-  ios: '3dd1dcd2e846f066',
-  android: '3dd1dcd2e846f066',
+  ios: 'b1fc45a3d75b10af',
+  android: 'b1fc45a3d75b10af',
 });
 
 export const BANNER_AD_UNIT_ID = Platform.select({
-  ios: '3b14f02f73ecde85',
-  android: '3b14f02f73ecde85',
+  ios: 'fe66788409aec00d',
+  android: 'fe66788409aec00d',
 });
 
 export const MREC_AD_UNIT_ID = Platform.select({
-  ios: '8d628f758ee071be',
-  android: '8d628f758ee071be',
+  ios: '11934af3b21ec459',
+  android: '11934af3b21ec459',
 });
 // APPOPEN
 export const NATIVE_AD_UNIT_ID = Platform.select({
-  ios: '677f3dce2534ea30',
-  android: '677f3dce2534ea30',
+  ios: 'd46bb4e06f6fcdbe',
+  android: 'd46bb4e06f6fcdbe',
 });
 
 export const AdLoadState = {

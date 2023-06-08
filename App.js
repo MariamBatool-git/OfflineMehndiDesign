@@ -9,22 +9,10 @@ import AppContainer from './src/navigator';
 import AppLovinMAX from "react-native-applovin-max";
 import { SDK_KEY } from './src/config/Constants';
 import { BANNER_AD_UNIT_ID } from './src/config/Constants';
-import { REWARDED_AD_UNIT_ID } from './src/config/Constants';
-import { NATIVE_AD_UNIT_ID } from './src/config/Constants';
-import { MREC_AD_UNIT_ID } from './src/config/Constants';
 import { INTERSTITIAL_AD_UNIT_ID } from './src/config/Constants';
-import InterExample from './src/ads/InterExample';
-import NativeAdViewExample from './src/ads/NativeAdView';
-import NativeBannerExample from './src/ads/NativeBanner';
-import NativeMRecExample from './src/ads/NativeMRec';
-import ProgrammaticBannerExample from './src/ads/ProgrammaticBanner';
-import ProgrammaticMRecExample from './src/ads/ProgrammaticMRec';
-import RewardedExample from './src/ads/Rewarded';
-import ScrolledAdViewExample from './src/ads/ScrolledAdView';
-
 import AppContext from './src/provider/Context';
 
-import AppButton from './src/components/AppButton';
+import SplashScreen from 'react-native-splash-screen'
 
 export default function App() {
   const [isInitialized, setIsInitialized] = useState(false);
@@ -40,6 +28,9 @@ export default function App() {
   useEffect(() => {
     initAppLovinMax();
     loadInterstitial();
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 4000);
   }, []);
 
   useEffect(() => {
