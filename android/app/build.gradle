@@ -117,6 +117,12 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+              storeFile file('Umair.keystore')
+              storePassword 'Umairkhn'
+              keyAlias 'umair'
+              keyPassword 'Umairkhn'
+        }
     }
     buildTypes {
         debug {
